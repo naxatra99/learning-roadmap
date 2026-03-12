@@ -6,7 +6,7 @@ const PHASE_COLORS = [
 ];
 
 const STORAGE_KEY = "zeroToOne_roadmap_v2";
-
+/*
 const SYSTEM_PROMPT = `You are an expert learning coach and curriculum designer. Create a detailed, actionable, phased learning roadmap based on the user's inputs.
 
 Respond with ONLY valid JSON — no markdown fences, no explanation, nothing else. Schema:
@@ -47,7 +47,7 @@ Rules:
 - Stats: include total weeks, hrs/week, total hours, cost estimate, exam/cert name if applicable
 - Early phases = concepts, middle = hands-on, late = projects + mastery
 - Output ONLY the JSON object.`;
-
+*/
 const QUESTIONS = [
   { id:"topic", label:"What do you want to master?", hint:"Be specific — e.g. 'Machine Learning', 'Guitar', 'SAP MM', 'Copywriting'", type:"text", placeholder:"e.g. Python for Data Science" },
   { id:"goal", label:"What's your end goal?", hint:"What does success look like for you?", type:"options", allowCustom:true, options:["Get a job / switch careers","Get certified","Build a personal project","Become a consultant / freelancer","Academic / research purposes","Personal growth & curiosity"] },
@@ -183,7 +183,7 @@ async function generateRoadmap(ans) {
   const doneCount=allKeys.filter(k=>checked[k]).length;
   const pct=allKeys.length?Math.round((doneCount/allKeys.length)*100):0;
   const phaseObj=roadmap?.phases.find(p=>p.id===activePhase);
-  const phaseC=phaseObj?PHASE_COLORS[(phaseObj.id-1)%PHASE_COLORS.length]:"#4A9EFF";
+  //const phaseC=phaseObj?PHASE_COLORS[(phaseObj.id-1)%PHASE_COLORS.length]:"#4A9EFF";
 
   // ── LANDING
   if(screen==="landing") return (
