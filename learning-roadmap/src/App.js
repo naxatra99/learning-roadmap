@@ -128,7 +128,7 @@ async function generateRoadmap(ans) {
   const resList=Array.isArray(ans.resources)?ans.resources.join(", "):ans.resources;
   
   try {
-    const res=await fetch("http://localhost:5000/api/generate-roadmap",{
+    const res=await fetch("https://learning-roadmap-api.onrender.com/api/generate-roadmap",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({topic:ans.topic,goal:ans.goal,hoursPerWeek:ans.hoursPerWeek,resources:resList})
